@@ -1,0 +1,3046 @@
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>	
+<link rel="shortcut icon" href="###favicon.ico" type="image/x-icon" media="screen">
+<link href="###favicon.ico" type="image/x-icon" media="screen">
+<!-- QQ登录验证 -->
+<meta property="qc:admins" content="170256737760611706375" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+<meta content="上海申康医院发展中心 医联预约平台" name="keywords">
+<title>上海申康医院发展中心 医联预约平台</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<script type="text/javascript" src="/js/jQuery/jquery1.42.min.js"></script>
+<script type="text/javaScript" src="/js/jQuery/jquery-1.11.1.js"></script>
+<script type="text/javaScript" src="/js/yuyue/index.js"></script>
+<script type="text/javaScript" src="/js/yuyue/lanrenzhijia.js"></script>
+<style>
+	#msg_img1 {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		padding: 2px 5px;
+		width: 120px;
+	}
+
+	#msg_img1 li h2 {
+		color: #666;
+		font-size: 13px;
+		text-align: center;
+		font-weight: normal;
+		padding: 2px 0;
+	}
+
+	#msg_img1 li p {
+		text-align: center;
+		color: #999;
+	}
+
+	#close_img1 {
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-size: 0 !important;
+		background: url(images/icon_close.gif) no-repeat;
+		width: 10px;
+		height: 10px;
+	}
+</style>
+<style>
+	/* 本例子css */
+	.slideBox { width: 528px; height: 230px; overflow: hidden; position: relative; float: left; }
+	.slideBox .hd { height: 15px; overflow: hidden; position: absolute; right: 5px; bottom: 5px; z-index: 1; }
+	.slideBox .hd ul { overflow: hidden; zoom: 1; float: left; }
+	.slideBox .hd ul li { float: left; margin-right: 2px; width: 15px; height: 15px; line-height: 14px; text-align: center; background: #fff; cursor: pointer; }
+	.slideBox .hd ul li.on { background: #dd6664; color: #fff; }
+	.slideBox .bd { position: relative; height: 100%; z-index: 0; }
+	.slideBox .bd li { zoom: 1; vertical-align: middle; }
+	.slideBox .bd img { width: 528px; height: 230px; display: block; }
+	/* 下面是前/后按钮代码，如果不需要删除即可 */
+	/* .slideBox .prev, .slideBox .next { position: absolute; left: 3%; top: 50%; margin-top: -25px; display: block; width: 32px; height: 40px; background: url(images/slider-arrow.png) -110px 5px no-repeat; filter: alpha(opacity=50); opacity: 0.5; }
+	.slideBox .next { left: auto; right: 3%; background-position: 8px 5px; }
+	.slideBox .prev:hover, .slideBox .next:hover { filter: alpha(opacity=100); opacity: 1; }
+	.slideBox .prevStop { display: none; }
+	.slideBox .nextStop { display: none; } */
+</style>
+<!-- 异步查询医院,快速挂号,医生,预约排行,最新挂号信息，最新新闻信息 -->
+<script type="text/javaScript" src="js/yuyue/initIndex.js"></script>
+<script type="text/javascript" src="js/jQuery/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javaScript">
+
+	
+	var currentPage = 1;
+	function switchTab(index) {
+		//获取Tab个数
+		var length = document.getElementById("Tab_Shi").getElementsByTagName("li").length;
+		//显示Tab数
+		var range = 10;
+		//设置开始Tab
+		currentPage += index;
+		//判断并调整左移边界
+		currentPage = currentPage < 1 ? 1 : currentPage;
+		//设置结束Tab
+		index = currentPage + range;
+		//判断并调整右移边间
+		currentPage = index > length ? length - range + 1 : currentPage;
+		for (var i = 1; i <= length; i++) {
+			var tab = document.getElementById("Tab_Shi_" + i);
+			if (i >= currentPage && i <= index) {
+				tab.style.display = "";
+			} else {
+				tab.style.display = "none";
+			}
+		}
+	}
+
+	function Tab_Shi_a_onclick(thiz) {
+		$("#Tab_Shi>li>a[id='" + thiz + "']").attr("class", "libg");
+		$("#Tab_Shi>li>a[id!='" + thiz + "']").attr("class", "");
+
+	}
+	function hospitalInfo(id) {
+		$("#fl_yiyuan_nr>div[id='" + id + "']").show();
+		$("#fl_yiyuan_nr>div[id!='" + id + "']").hide();
+	}
+
+	function yuyue_f1_a_onclick(thiz) {
+		$(".yuyue_fl_top>li>a[class='active']").attr("class", "");
+		$(thiz).attr("class", "active");
+
+	}
+</script>
+<script type="text/javaScript">
+	function T(n) {
+		document.getElementById("ArticleCnt").style.fontSize = n + "px";
+	}
+</script>
+<script type="text/javascript">
+	jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:true});
+</script>
+</head>
+<body>
+	
+
+
+
+<script type="text/javaScript" src="js/yuyue/inputValiad.js"></script>
+<script type="text/javaScript" src="js/yuyue/base64.js"></script>
+<script type="text/javaScript" src="js/yuyue/index.js"></script> 
+<script type="text/javaScript" src="js/jQuery/jquery-ui.js"></script>
+<script type="text/javaScript" src="js/yuyue/JPlaceholder.js"></script>
+<script type="text/javaScript">
+
+// 在JS中创建一个input元素，并判断元素有没有一个叫做placeholder的属性  
+// 如果浏览器支持的话，那么在js里面引用的DOM就会存在这个属性  
+/* function hasPlaceholderSupport() {  
+    var input = document.createElement('input');  
+    return ('placeholder' in input);  
+}   */
+/* jQuery 代码,当然，记得引入jQuery的库哦*/  
+/* $(function(){  
+  if(hasPlaceholderSupport()){  
+    // 获取address元素  
+    var $address = $("textarea[name='address']");  
+    placeholder = $address.attr("placeholder");  
+    // 绑定 focus事件  
+    $address.bind('focus',function(){  
+      if(placeholder == $address.val()){  
+        $address.val('');  
+      }  
+    });  
+    // 失去焦点事件  
+    $address.bind('blur',function(){  
+      if('' == $address.val()){  
+        $address.val(placeholder);  
+      }  
+    });  
+  }  
+});   */
+
+
+
+
+
+
+
+	function nofindLogo() {
+		var img = event.srcElement;
+		img.src = "images/logo/logo.png";
+		img.onerror = null;
+	}
+	function nofindHeader_bg() {
+		var img = event.srcElement;
+		img.src = "images/header_bg/header_bg.png";
+		img.onerror = null;
+	}
+
+	function searchCls(cls, flag) {
+		if (flag) {
+			$(cls).val('');
+		} else {
+			if ($(cls).val() == null || $(cls).val().length < 1) {
+				$(cls).val('请输入医院名称、科室、专家姓名');
+			}
+		}
+	}
+
+	$(function() {
+		$('#searchParent').bind(
+				'submit',
+				function() {
+					if ($("#textfields").val().length > 0
+							&& $("#textfields").val() != '请输入医院名称、科室、专家姓名') {
+						return true;
+					} else {
+						window.alert("搜索内容不能为空!");
+						return false;
+					}
+				});
+		//回车登陆
+		$("#loginbox").keypress(function(e) {
+			// 回车键事件  
+			if (e.which == 13) {
+				ok();
+			}
+		});
+	
+		$('#userTop').hover(function() {
+		 	$(this).addClass('bookingorder_div_on');
+		 }, function() {
+		 	$(this).removeClass('bookingorder_div_on');
+		 });
+		 })
+		 
+	function quanjiao(obj)
+	{
+    	var str=obj.value;
+	    if (str.length>0)
+	    {
+	        for (var i = str.length-1; i >= 0; i--)
+	        {
+	            unicode=str.charCodeAt(i);
+	            if (unicode>65280 && unicode<65375)
+	            {
+	                alert("不能输入全角字符，请输入半角字符");
+	                obj.value=str.substr(0,i);	            
+	        	}
+	     	}
+		}
+	} 
+	//raiseClassRoom.action?title=7&parentID=2&channelid=99&address=/WEB-INF/bookingInfo/raiseClassRoom.jsp
+	function hiddenUrl(parentID,channelid,address){
+		window,location.href="raiseClassRoom.action?parentID="+parentID+"&channelid="+channelid+"&address="+address;
+	}
+</script>
+<div id="header">
+	
+	<input type="hidden" id="sessionUserName" name="sessionUserName" value="" />
+	<input type="hidden" id="sessionUserPhone" name="sessionUserPhone" value="" />
+	<div class="top">
+		<div class="top_right">
+            <div class="fr">
+			
+				<span id="logheader"> 
+				<a href="javascript:doUserLogin()" target="_parent">登录</a> <span class="gray">│ </span>
+				<a href="forwardRegisterAction.action" target="_parent">注册</a> 
+				
+				</span> 
+				<span class="gray">│ </span>
+				<a href="#" onclick="AddFavorite()">加入收藏</a>
+				<span class="gray">│ </span>
+				<a href="getArticleList_guide.action?articleId=461&channelId=105&contentPath=&pattern=1" target="_parent">帮助中心</a>
+				<span class="gray">│ </span>
+				<a href="javascript:doUserAdvise()" target="_parent">网站建议&nbsp;&nbsp;</a>
+			</div>
+           
+			<div style="display:none;" class="bookingorder_div fr" id="userTop">
+                <a class="bookingorder_a layout">我的预约挂号 <i class="g_icon g_down"></i></a>
+                <div class="bookingorder_done none" >
+					<ul style="heigh：auto;">
+						<li><a href="myselfOrder.action?title=3">我的预约单</a></li>
+						<li><a href="myInformation.action?title=3">基本信息</a></li>
+						<li><a href="myFamilyManage.action?title=3">卡号管理</a></li>
+						<li><a href="myCommentation.action?title=3">我的评论</a></li>
+						<li><a href="viewCollectDoctorList.action?title=3&doctorCollectResult=">医生关注</a></li>
+						<li><a href="safeManage.action?title=3">安全中心</a></li>
+					</ul>
+				</div>
+           </div>
+		</div>
+	</div>
+	<div class="big_width clearfix">
+		<div class="logo">
+			<img src="images/logo.png" />
+		</div>
+		<!--搜索开始-->
+		<div class="search">
+			<form id='searchParent' target="_parent" action="search.action"
+				method="post">
+				<i class="searchico"></i>
+				<input name="textfields" type="text" id="textfields" value="请输入医院名称、科室、专家姓名"
+					onfocus="searchCls(this,true);" onblur="searchCls(this,false);" onkeyup="value=value.replace(/[ ！@#￥%……&*（）《》!@#$%^&*()<>:]/,'')" style="color: #999999;" /> 
+				<input type="submit" class="search_button" value="搜 索"></input>
+			</form>
+		</div>
+    </div>
+  </div>
+  <div id="nav">
+		<div class="bg_middle">
+			<div class="lanmu">
+				<ul class="clearfix">
+					<li>
+						<a href="searchOrgAction.action?title=1" target="_parent" 
+							class="white1">首页 </a>
+					</li>
+					
+					<li>
+						<a href="http://www.shdc.org.cn/familyServices/index" target="_blank" 
+							class="white1">报告查询 </a>
+					</li>
+
+					<li>
+						<a href="myselfOrder.action?title=3" target="_parent"
+							class="white1">个人中心
+						</a>
+					</li>
+					<li>
+						<a href="querty.action?pattern=1&title=4" target="_parent" 
+							class="white1">预约排名
+						</a>
+					</li>
+					<li>
+						<a href="getArticleList_guide.action?title=5" target="_parent"
+							class="white1">预约指南
+						</a>
+					</li>
+					 
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--弹窗-->
+	<div id="loginbox" style="display: none" class="loginbox">
+		<a onclick="onclose1();" class="closebtn">X</a>
+		<div class="title">用户登录</div>
+		<ul class="box">
+			<li>
+				<label>登录名</label> 
+				<input type="text" class="input_x" maxlength="20" size="20" placeholder="请输入用户名/手机号码/身份证" id="loginuserName"
+					name="orderwebUser.userName" type="text" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')"/>
+			</li>
+			<li>
+				<label>密&emsp;码</label> 
+				<input type="password" class="input_x" id="loginuserPassword" name="loginuserPassword" type="password" autocomplete="off" 
+					maxlength="20" size="20" placeholder="请输入6-20位字符密码" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9`~%!@#$^&*()+=|:;',.<>?_]/g,'')"/>
+			</li>
+			<li>
+				<label>验证码</label> 
+				<input style="width: 100px;" name="logincertCode" id="logincertCode"
+					type="text" maxlength="6" size="6" placeholder="请输入验证码" onkeyup="javascript:RepNumber(this)"> 
+					<a><img id="randImage" align="absmiddle" src="verifycode.xujie?id='+ Math.random();"
+						onclick="javascript:this.src='verifycode.xujie?id='+ Math.random();" alt="换一个" width="150" height="50"></a>
+			</li> 
+			<li>
+				<label>&nbsp;</label> 
+				<input type='submit' value="登录" class="btn" onclick="ok();javascript:this.src='verifycode.xujie?id='+ Math.random();">
+			</li>
+				
+	        <li style="margin-bottom:2px;">
+		            <!-- <div class="third_login clearfix" id="third_login">
+			            <div class="third_login_title fl">快捷登录</div>
+			              <div class="t_c share_l fl">
+			                <a href="javascript:void(0)" onclick="interfaceLogin('qq','2')" title="用QQ登陆" class="login_qq a_icon"></a>
+			              	<a href="###" title="用新浪微博账号登陆" class="login_weibo a_icon"></a>
+			                <a href="###" title="用淘宝账号登陆" class="login_tao a_icon"></a>
+			                <a href="###" title="用支付宝账号登陆" class="login_zfb a_icon"></a>
+			              </div>
+		            </div> -->
+					<div class="pageList">
+				 		<a href="forwardRegisterAction.action" class="register_a" title="免费注册">免费注册</a><span>|</span>	
+				 		<a href="forwardOrderwebPassword.action" class="findpw_a" title="找回密码">找回密码</a> 
+				 	</div>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="bindPhoneBox" style="display: none" class="loginbox">
+		<div class="title">提示</div>
+		<ul class="box" style="padding-bottom: 0px;margin-bottom: 0;">
+			<li style="text-align: center;">
+				<p style="color: red;">手机未绑定，请先绑定手机。</p> 
+			</li>
+			
+			<li style="text-align: center;">
+				<input id="btn-bind" type='submit' value="现在绑定" class="btn" onclick="" style="width: 120px;font-size: 16px;height: 30px;line-height: 30px;">
+				<input id="btn-cancle" type='button' value="取消" class="btn" onclick="" style="width: 100px;font-size: 16px;height: 30px;line-height: 30px;background-color: #DCD731;">
+			</li>
+		</ul>
+	</div>
+	
+	<!--QQ弹窗-->
+	<div id="loginQQbox" style="display: none" style="padding:0px;">
+		 <a onclick="onclose3();" class="closebtn">X</a> 
+		 <iframe style="width:510px;height:600px;" id="interfaceIframe" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no">
+		 </iframe>
+		<!-- <a onclick="onclose3();" class="closebtn2" >取消</a> --> 
+	</div>
+
+	<!--start add advise function module by liqin at 2015-05-08-->
+	<!--建议弹窗-->
+	<div id="advisebox" style="display: none" class="loginbox advisebox">
+		<a onclick="onclose2();" class="closebtn">X</a>
+		<div class="title">我要提建议</div>
+		<ul class="box">
+			<li>
+				<label><font color="red">*</font>建议描述：</label> 
+				<textarea style="font-size: 14px;width: 250px; height:auto;" cols="39" rows="6" style="resize:none;" maxlength="499" id="adviseContent" onkeyup="this.value=this.value.substring(0, 499).replace(/[ ！@#￥%……&*（）《》!@#$%^&*()<>:]/,'')"
+					onkeydown="this.value=this.value.substring(0, 499)" onchange="this.value=this.value.substring(0, 499)"
+					name="orderwebAdvise.adviseContent" placeholder="尊敬的用户，谢谢您宝贵的意见"></textarea>
+				<!-- <input type="submit" value="测试">  -->
+				<span id='adviseContentError' style="color: red; font-size: 14px; display: none;resize:none;">建议描述字数范围为1-500内</span>
+			</li>
+			<li>
+				<label><font color="red">*</font>联系邮箱：</label> 
+				<input style="font-size: 14px;" type="email" class="input_x" id="adviseEmail" name="orderwebAdvise.adviseEmail"
+					size="15" placeholder="请留下联系方式" /> 
+				<span id='adviseEmailError' style="color: red; font-size: 14px; display: none;">请填写合法有效的邮箱地址</span>
+			</li>
+			<li><label><font color="red">*</font>联系手机：</label> 
+				<input style="font-size: 14px;" type="text" class="input_x" id="advisePhone" name="orderwebAdvise.advisePhone" onkeyup="javascript:RepNumber(this)" maxlength="11" size="11" />
+				<span id='advisePhoneError' style="color: red; font-size: 14px; display: none;">请输入真实有效的手机号码</span>
+			</li>
+			<li>
+				<label><font color="red">*</font>验&nbsp;&nbsp;证&nbsp;&nbsp;码：</label>
+				<input class="input_x" onfocus="javascrip: document.getElementById('adviseCodeError').style.display = 'none'"
+				style="width: 100px;" name="adviseCode" id="adviseCode" type="text"
+				maxlength="6" size="6" placeholder="请输入验证码" onkeyup="javascript:RepNumber(this)"> 
+				<a><img id="randImage1" align="absmiddle" src="verifycode.xujie?id='+ Math.random();"
+				onclick="javascript:this.src='verifycode.xujie?id='+ Math.random();" alt="换一个" width="150" height="50" /></a> 
+				<span id='adviseCodeError' style="color: red; font-size: 14px; display: none;">请输入验证码</span>
+			</li>
+			<li>
+				<label>&nbsp;</label> 
+				<input type='submit' value="提交" class="btn" onclick="submitAdivse();">
+			</li>
+		</ul>
+	</div>
+</div>
+<script language="javascript" type="text/javascript">
+	
+	function textHide() {
+		if (document.getElementById('textfield')
+				&& document.getElementById('textfield').value == "请输入医院名称、科室、专家姓名") {
+			document.getElementById('textfield').value = "";
+			document.getElementById('textfield').style.color = "#000000";
+		}
+	}
+
+	function textShow() {
+		if (document.getElementById('textfield')
+				&& document.getElementById('textfield').value == "") {
+			document.getElementById('textfield').value = "请输入医院名称、科室、专家姓名";
+			document.getElementById('textfield').style.color = "#696969";
+		}
+	}
+
+	function search() {
+		document.getElementById('searchParent').submit();
+	}
+	
+	function noticeInfo(arcticleId, channelId, contentPath) {
+		window.parent.window.location.href = "getArticleDetail_news.action?articleId="
+				+ arcticleId
+				+ "&channelId="
+				+ channelId
+				+ "&contentPath="
+				+ contentPath;
+	}
+	
+	function orgNesInfo(arcticleId, channelId, contentPath) {
+		window.parent.window.location.href = "getArticleDetail_news.action?articleId="
+				+ arcticleId
+				+ "&channelId="
+				+ channelId
+				+ "&contentPath="
+				+ contentPath;
+	}
+	
+	function AddFavorite() {
+		//url = encodeURI(url);
+		url=document.URL;
+		title=document.title;
+		//alert(url+"======"+title);
+		try {
+			window.external.addFavorite(url, title);          //ie
+			}catch(e) {
+		           try {
+		                 window.sidebar.addPanel(title, url, "");     //firefox
+		           } catch(e) {
+
+		                 alert("加入收藏失败，请使用Ctrl+D进行添加");     //chrome opera safari
+
+		           }
+
+		      }
+	}
+</script>
+
+<script language="javascript" type="text/javascript">
+	function doUserLogin() {
+		messageBoxModal({
+			content : $("#loginbox"),
+			id : 'closeId',
+			isCancel : true
+		});
+		document.getElementById("loginuserName").focus();
+	}
+	
+	function bindPhone(userPhone){
+		var loginName=$("#sessionUserName").val();
+		var sessionUserPhone=$("#sessionUserPhone").val();
+		if((loginName!= "" && sessionUserPhone == "") || (typeof(userPhone) != 'undefined' && userPhone == '') ){
+			//bindPhoneBox
+			messageBoxModal({
+				content : $("#bindPhoneBox"),
+				id : 'closeId',
+				isCancel : true
+			});
+			return false;
+		}
+		return true;
+		//document.getElementById("loginuserName").focus();
+	}
+	$("#btn-cancle").click(function(){
+		messageBoxClose('closeId');
+	});
+	$("#btn-bind").click(function(){
+		location='/myInformation.action?title=3';
+	});
+	if("" != "" && "" == ""&& "" == "1"){
+		bindPhone();
+	}
+	//--start add advise function module by liqin at 2015-05-08---
+	function doUserAdvise() {
+		messageBoxModal({
+			content : $("#advisebox"),
+			id : 'closeId',
+			isCancel : true
+		});
+	}
+	//第三方接口登录
+	function doInterfaceLogin() {
+		messageBoxModal({
+			content : $("#loginQQbox"),
+			id : 'closeId',
+			isCancel : true
+		});
+	}
+
+	function submitAdivse() {
+		//文本框获取焦点是将对应的提示信息隐藏
+		$("#adviseContent").focus(
+			function() {
+				document.getElementById("adviseContentError").style.display = "none";
+			}
+		);
+		$("#adviseEmail").focus(
+			function() {
+				document.getElementById("adviseEmailError").style.display = "none";
+			}
+		);
+		
+		$("#advisePhone").focus(
+			function() {
+				document.getElementById("advisePhoneError").style.display = "none";
+			}
+		);
+		
+		$("#adviseCode").focus(
+			function() {
+				document.getElementById("adviseCodeError").style.display = "none";
+			}
+		);
+		//校验：建议描述不为空，填写的邮箱合法性，校验码
+		var flg = true;
+		if ($("#adviseContent").val().length <= 0 || $("#adviseContent").val().length >= 500) {
+			document.getElementById("adviseContentError").style.display = "block";
+			flg = false;
+			$("#randImage1").removeAttr('src').attr('src',"verifycode.xujie?id=" + Math.random());
+		}
+		if (verifyAdviseEmail()) {
+			document.getElementById("adviseEmailError").style.display = "block";
+			flg = false;
+			$("#randImage1").removeAttr('src').attr('src',"verifycode.xujie?id=" + Math.random());			
+		}
+		
+		if (verifyAdvisePhone()) {
+			document.getElementById("advisePhoneError").style.display = "block";
+			flg = false;		
+		}
+		
+		if ($("#adviseCode").val().length <= 0) {
+			document.getElementById("adviseCodeError").style.display = "block";
+			flg = false;
+		}
+		if (flg) {
+			$.ajax({
+				url : "addSave.action",
+				type : "POST",
+				cache : false,
+				data : {
+					"orderwebAdvise.adviseContent" : $("#adviseContent").val(),
+					"orderwebAdvise.adviseEmail" : $("#adviseEmail").val(),
+					"orderwebAdvise.advisePhone" : $("#advisePhone").val(),
+					"certCode" : $("#adviseCode").val()
+				},
+				dateType : "json",
+				error : function(data) {
+					alert(data);
+				},
+				success : function(message) {
+					if (message != "" && message != null) {
+
+						if (message == 'certCodError') {
+							alert("校验码输入错误");
+							$("#randImage1").removeAttr('src').attr('src',"verifycode.xujie?id=" + Math.random());
+						} else if (message == 'success') {
+							alert("非常感谢您的宝贵建议，我们将尽快改进，为您提供更好的服务");
+							onclose2();
+						} else {
+							alert(message);
+						}
+					}
+				}
+			})
+		}
+	}
+
+	function checkCertCode() {
+		var temp0 = document.getElementById("adviseCode").value.toUpperCase();
+		if (temp0.length <= 0) {
+			return true;
+		}
+
+		return false;
+	}
+	
+	function verifyAdviseEmail() {
+		var temp = document.getElementById("adviseEmail");
+		if (temp.value == "") {
+			return false;
+		}
+		//对电子邮件的验证
+		var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+		if (!myreg.test(temp.value)) {
+			return true;
+		}
+		return false;
+	}
+	
+	function verifyAdvisePhone() {
+	
+		var temp = document.getElementById("advisePhone");
+		if (temp.value == "") {
+			return false;
+		}
+		//对手机号码的验证
+		var phoneReg = /^[0-9]{11}$/;
+		
+		if (!phoneReg.test(temp.value)) {
+			return true;
+		}
+		return false;
+	}
+	
+	
+	//js限制只能数字输入，并且在把输入的“非法字符”清除掉之后将焦点停留在输入非法字符的位置
+	function RepNumber(obj) {
+		var reg = /^[\d]+$/g;
+		if (!reg.test(obj.value)) {
+			var txt = obj.value;
+			txt.replace(/[^0-9]+/, 
+				function (char, index, val) {					//匹配第一次非数字字符
+							obj.value = val.replace(/\D/g, ""); //将非数字字符替换成""
+							var rtextRange = null;
+						if (obj.setSelectionRange) {
+							obj.setSelectionRange(index, index);
+						} 
+						else {//支持ie
+							rtextRange = obj.createTextRange();
+							rtextRange.moveStart('character', index);
+							rtextRange.collapse(true);
+							rtextRange.select();
+						}
+				})
+		}
+	} 
+	
+	function onclose2() {
+		messageBoxClose('closeId');
+		document.getElementById("adviseContent").value = "";
+		document.getElementById("adviseEmail").value = "";
+		document.getElementById("advisePhone").value = "";
+		document.getElementById("adviseCode").value = "";
+		$("#randImage1").removeAttr('src').attr('src',
+				"verifycode.xujie?id=" + Math.random());
+	}
+	//--end add advise function module by liqin at 2015-05-08---
+
+	function onclose1() {
+		messageBoxClose('closeId');
+		$("#randImage").removeAttr('src').attr('src',
+				"verifycode.xujie?id=" + Math.random());
+	}
+	function onclose3() {
+		messageBoxClose('closeId');
+		$("#randImage").removeAttr('src').attr('src',
+				"verifycode.xujie?id=" + Math.random());
+	}
+	
+	
+	function ok() {
+		var username = $("#loginuserName").val();
+		var password = $("#loginuserPassword").val();
+		if (!checkValidInput(username))
+		{
+			alert("输入的用户名或者密码不合法");
+			return;
+		}
+		var userName =  encode64($("#loginuserName").val()); 
+		var password =  encode64($("#loginuserPassword").val());
+		$.ajax({
+					url : "loginAction!loginQuick.action",
+					type : "POST",
+					async : false,
+					data : {
+						"orderwebUser.userName" :userName,
+						"userPassword" : password,
+						"certCode" : $("#logincertCode").val()
+					},
+					dateType : "json",
+					success : function(msg) {
+						var errinfo = msg.split("-")[0];
+						var username = msg.split("-")[1];
+						var userPhone = msg.split("-")[2];
+						if (errinfo == "") {
+							$("#logheader")
+									.html(
+											"<a href=\"myselfOrder.action?title=2\" class=\"green\"><span class=\"green\">"
+													+ username
+													+ " </span></a> &nbsp;<span class=\"gray\">				│ </span><a href=\"logoutAction.action\" target=\"_parent\">注销</a>");
+							$("#sessionUserName").val(username);
+							$("#sessionUserPhone").val(userPhone);
+							$("#userTop").show();
+								onclose1();
+							
+							bindPhone(userPhone);
+							 
+						} else {
+							alert(errinfo);
+							$("#randImage").removeAttr('src').attr('src',
+									"verifycode.xujie?id=" + Math.random());
+						}
+					}
+				});
+				
+	}
+	
+	
+	//点击类型,登录页面 = 1 弹窗登录 = 2
+	function interfaceLogin(type,clickType){
+	 	 $.ajax({
+			url : "interfaceLogin.action?loginType="+type,
+			type : "POST",
+			async : false,
+			dateType : "json",
+			success : function(msg) {
+				if(clickType==1){
+					window.location.href = msg;
+				}else if(clickType==2){
+					onclose1();
+					doInterfaceLogin();
+					$("#interfaceIframe").attr("src",msg);
+				}
+			}
+		});  
+		//window.location.href = 'registerBind.jsp';
+	}
+</script>
+	<div id="nav">
+		<form id='searchParent' target="_parent" action="search.action" method="post">
+			<input type="hidden" name="ipAddress" id="ipAddress" value="" /> 
+			<input type="hidden" name="ipRegional" id="ipRegional" value="" />
+			<div class="pic_choose">
+					<div class="list_01">
+    					<div class="left_img">
+    						<img src="images/choose_01.png" alt="#" />
+    					</div>
+	    				<div class="list_conts">选择
+	    					<br/>医院、科室
+	    				</div>
+    				</div>
+    				<div class="line_img">
+    					<img src="images/cho.jpg" width="1" height="105" alt=""/>
+    				</div>
+	    			<div class="list_02">
+	    				<div class="left_img"><img  src="images/choose_02.png" alt="#" /></div>
+	    				<div class="list_conts_02">选择医生、就诊时间
+	    					<br/>填写预约挂号单
+	    				</div>
+	    			</div>
+	     			<div class="line_img">
+	     				<img src="images/cho.jpg" width="1" height="105" alt=""/>
+	     			</div>
+	 				<div class="list_03">
+	   					<div class="left_img">
+	   						<img  src="images/choose_03.jpg" alt="#" />
+	   					</div>
+						<div class="list_conts_03">预约成功
+							<br />凭有效证件取号就诊
+						</div>
+	   				</div>
+   				</div>
+			<input type="hidden" name="hosorgcode" value="" />
+		</from>
+	</div>
+	<div class="container">
+      	<div class="one clearfix" style="margin-top:10px;">
+    		<div id="slideBox" class="slideBox">
+         	 	<div class="hd">
+	        		<ul>
+		              <li>1</li>
+		              <li>2</li>
+		              <li>3</li>
+	            	</ul>
+      			</div>
+          		<div class="bd">
+	        		<ul>
+	              		<li>
+	            			<span><img src="images/pic1.jpg" /></span>
+	          			</li>
+	              		<li>
+	            			<span><img src="images/pic2.jpg" /></span>
+	          			</li>
+	              		<li>
+	            			<span><img src="images/pic3.jpg" /></span>
+	          			</li>
+	            	</ul>
+      			</div>
+          		
+      			
+	        <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+	        <!-- <a class="prev" href="javascript:void(0)"></a>
+	        <a class="next" href="javascript:void(0)"></a> -->
+        	</div>
+		    <script type="text/javascript">
+				jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:true});
+			</script>
+			
+        	
+        	<div class="oneright">
+      <div class="yuyue_kuai_top">
+        <span class="bline2">公告栏</span></div>
+	    <ul class="newlist">
+				<!--  -->
+				
+				
+					
+						<li>
+							<span>［2017-06-29］</span>
+							<a title='各医院预约周期'  href='javascript:noticeInfo(810,102,"");'>
+								<!-- 各医院预约周期 -->
+								
+									
+									
+										各医院预约周期
+									
+								
+							</a>
+						</li>
+					
+						<li>
+							<span>［2017-06-16］</span>
+							<a title='客服电话系统升级公告'  href='javascript:noticeInfo(818,102,"");'>
+								<!-- 客服电话系统升级公告 -->
+								
+									
+									
+										客服电话系统升级公告
+									
+								
+							</a>
+						</li>
+					
+						<li>
+							<span>［2016-06-23］</span>
+							<a title='各医院门诊的年龄限制'  href='javascript:noticeInfo(811,102,"");'>
+								<!-- 各医院门诊的年龄限制 -->
+								
+									
+									
+										各医院门诊的年龄限制
+									
+								
+							</a>
+						</li>
+					
+						<li>
+							<span>［2016-04-06］</span>
+							<a title='对使用不正当方法抢号行为处理的说明'  href='javascript:noticeInfo(766,102,"");'>
+								<!-- 对使用不正当方法抢号行为处理的说明 -->
+								
+									
+									
+										对使用不正当方法抢号行为处理的说明
+									
+								
+							</a>
+						</li>
+					
+						<li>
+							<span>［2016-03-15］</span>
+							<a title='上海申康医院发展中心10周年'  href='javascript:noticeInfo(762,102,"");'>
+								<!-- 上海申康医院发展中心10周年 -->
+								
+									
+									
+										上海申康医院发展中心10周年
+									
+								
+							</a>
+						</li>
+					
+						<li>
+							<span>［2016-02-24］</span>
+							<a title='关于做好本市寨卡病毒疫情防范和应对准备工作通知 '  href='javascript:noticeInfo(759,102,"");'>
+								<!-- 关于做好本市寨卡病毒疫情防范和应对准备工作通知  -->
+								
+									
+										关于做好本市寨卡病毒疫情防范和应对准备工作通...
+									
+									
+								
+							</a>
+						</li>
+					
+				
+	    </ul>
+    </div>
+  </div>
+  		</div>
+      	<div class="main clearfix" style="margin-top: 20px;">
+    		<div class="booking_hos">
+        		<div class="yuyue_fl">
+			        <div class="yuyue_fl_top">
+			              	<li class="fl_yiyuan">
+			            		<a id="fl_yiyuan" class="active" onclick="yuyue_f1_a_onclick(this)">综合医院</a>
+			          		</li>
+			        </div>
+			        <div class="yuyue_fl_yy" id="hospitalInfo">
+			              	<!-- Table 导航开始 -->
+			              	<div id="fl_yiyuan_nr" class="clearfix">
+			              	
+										<!-- 显示综合医院-->
+										
+											<div id="zhyy">
+										
+										
+										<ul>
+										    
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='长海医院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'10',
+															hosOrgCode:'42509782100',
+															paymode:'3',
+															orgname:'长海医院', 
+															is_exclusive:'1'},
+															'searchDeptmentAction.action')">
+															长海医院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='长征医院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'13',
+															hosOrgCode:'42500997500',
+															paymode:'3',
+															orgname:'长征医院', 
+															is_exclusive:'1'},
+															'searchDeptmentAction.action')">
+															长征医院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='华东医院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'14',
+															hosOrgCode:'42502653X03',
+															paymode:'3',
+															orgname:'华东医院', 
+															is_exclusive:'0'},
+															'searchDeptmentAction.action')">
+															华东医院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='华山医院北院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'16',
+															hosOrgCode:'56806983600',
+															paymode:'3',
+															orgname:'华山医院北院', 
+															is_exclusive:'0'},
+															'searchDeptmentAction.action')">
+															华山医院北院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='上海市瑞金医院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'17',
+															hosOrgCode:'42502656400',
+															paymode:'3',
+															orgname:'上海市瑞金医院', 
+															is_exclusive:'0'},
+															'searchDeptmentAction.action')">
+															上海市瑞金医院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='上海市瑞金医院北院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'19',
+															hosOrgCode:'55740980700',
+															paymode:'3',
+															orgname:'上海市瑞金医院北院', 
+															is_exclusive:'0'},
+															'searchDeptmentAction.action')">
+															上海市瑞金医院北院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='仁济医院东院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'20',
+															hosOrgCode:'42502657201',
+															paymode:'3',
+															orgname:'仁济医院东院', 
+															is_exclusive:'1'},
+															'searchDeptmentAction.action')">
+															仁济医院东院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='仁济医院西院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'21',
+															hosOrgCode:'42502657200',
+															paymode:'3',
+															orgname:'仁济医院西院', 
+															is_exclusive:'1'},
+															'searchDeptmentAction.action')">
+															仁济医院西院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='仁济医院南院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'23',
+															hosOrgCode:'56650590500',
+															paymode:'3',
+															orgname:'仁济医院南院', 
+															is_exclusive:'1'},
+															'searchDeptmentAction.action')">
+															仁济医院南院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='第一人民医院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'24',
+															hosOrgCode:'42501272800',
+															paymode:'3',
+															orgname:'第一人民医院', 
+															is_exclusive:'0'},
+															'searchDeptmentAction.action')">
+															第一人民医院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='第一人民医院南院(松江)' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'34',
+															hosOrgCode:'42501272801',
+															paymode:'3',
+															orgname:'第一人民医院南院(松江)', 
+															is_exclusive:'0'},
+															'searchDeptmentAction.action')">
+															第一人民医院南院(松江) 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='第九人民医院(北部院区)' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'36',
+															hosOrgCode:'42501471500',
+															paymode:'3',
+															orgname:'第九人民医院(北部院区)', 
+															is_exclusive:'0'},
+															'searchDeptmentAction.action')">
+															第九人民医院(北部院区) 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='第九人民医院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'40',
+															hosOrgCode:'42502658000',
+															paymode:'3',
+															orgname:'第九人民医院', 
+															is_exclusive:'0'},
+															'searchDeptmentAction.action')">
+															第九人民医院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='第六人民医院东院(临港)' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'41',
+															hosOrgCode:'55745320X00',
+															paymode:'3',
+															orgname:'第六人民医院东院(临港)', 
+															is_exclusive:'1'},
+															'searchDeptmentAction.action')">
+															第六人民医院东院(临港) 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='第六人民医院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'45',
+															hosOrgCode:'42502652100',
+															paymode:'3',
+															orgname:'第六人民医院', 
+															is_exclusive:'1'},
+															'searchDeptmentAction.action')">
+															第六人民医院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='第十人民医院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'46',
+															hosOrgCode:'42500853400',
+															paymode:'3',
+															orgname:'第十人民医院', 
+															is_exclusive:'1'},
+															'searchDeptmentAction.action')">
+															第十人民医院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='同济医院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'47',
+															hosOrgCode:'42501068500',
+															paymode:'3',
+															orgname:'同济医院', 
+															is_exclusive:'1'},
+															'searchDeptmentAction.action')">
+															同济医院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='新华医院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'48',
+															hosOrgCode:'42502659900',
+															paymode:'3',
+															orgname:'新华医院', 
+															is_exclusive:'0'},
+															'searchDeptmentAction.action')">
+															新华医院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													<li>
+														<a title='中山医院' href="####" onclick="formSubmit({
+															isSpTime:'0',
+															platformHosId:'49',
+															hosOrgCode:'42500506900',
+															paymode:'3',
+															orgname:'中山医院', 
+															is_exclusive:'0'},
+															'searchDeptmentAction.action')">
+															中山医院 
+														</a>
+													</li>
+													
+													
+											
+													<!-- 判断医院是否开放预约 --> 
+													
+													
+														
+														
+														<li>
+														<a href="####" style="color: gray;">华山医院(改造中)</a>
+														</li>
+														
+													
+											
+											
+										</ul>
+							</div>
+							
+										<!-- 显示综合医院-->
+										
+										
+											<div id="zyyy" style="display: none;">
+										
+										<ul>
+										    
+										</ul>
+							</div>
+							
+										<!-- 显示综合医院-->
+										
+										
+											<div id="zkyy" style="display: none;">
+										
+										<ul>
+										    
+										</ul>
+							</div>
+							
+			        </div>
+        			<!-- Table 内容结束 -->
+        		</div>
+        		
+        		</br>
+		      	<div class="yuyue_fl">
+			        <div class="yuyue_fl_top">
+			              	<li class="fl_yiyuan">
+			            		<a id="fl_yiyuan" class="active" onclick="yuyue_f1_a_onclick(this)">中医医院</a>
+			          		</li>
+			        </div>
+		        	<div class="yuyue_fl_yy" id="hospitalInfo">
+		              	<!-- Table 导航开始 -->
+		              	<div id="fl_yiyuan_nr" class="clearfix">
+		            	
+									<!-- 显示中医医院-->
+									
+									
+										<div id="zhyy"
+											style="display: none;">
+									
+									<ul>
+									    
+									</ul>
+							</div>
+							
+									<!-- 显示中医医院-->
+									
+										<div id="zyyy">
+									
+									
+									<ul>
+									    
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='龙华医院' href="####" onclick="formSubmit({
+														isSpTime:'0',
+														platformHosId:'6',
+														hosOrgCode:'42502634500',
+														paymode:'3',
+														orgname:'龙华医院', is_exclusive:'1'},'searchDeptmentAction.action')">
+														龙华医院 
+													</a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='曙光医院东院' href="####" onclick="formSubmit({
+														isSpTime:'0',
+														platformHosId:'7',
+														hosOrgCode:'42500377601',
+														paymode:'3',
+														orgname:'曙光医院东院', is_exclusive:'0'},'searchDeptmentAction.action')">
+														曙光医院东院 
+													</a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='曙光医院西院' href="####" onclick="formSubmit({
+														isSpTime:'0',
+														platformHosId:'8',
+														hosOrgCode:'42500377600',
+														paymode:'3',
+														orgname:'曙光医院西院', is_exclusive:'0'},'searchDeptmentAction.action')">
+														曙光医院西院 
+													</a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='上海市中医医院' href="####" onclick="formSubmit({
+														isSpTime:'0',
+														platformHosId:'11',
+														hosOrgCode:'42500884100',
+														paymode:'3',
+														orgname:'上海市中医医院', is_exclusive:'1'},'searchDeptmentAction.action')">
+														上海市中医医院 
+													</a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='上海市中医医院石门路门诊部' href="####" onclick="formSubmit({
+														isSpTime:'0',
+														platformHosId:'18',
+														hosOrgCode:'42500484900',
+														paymode:'3',
+														orgname:'上海市中医医院石门路门诊部', is_exclusive:'1'},'searchDeptmentAction.action')">
+														上海市中医医院石门路门诊部 
+													</a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='岳阳中西医结合医院' href="####" onclick="formSubmit({
+														isSpTime:'0',
+														platformHosId:'42',
+														hosOrgCode:'42503274500',
+														paymode:'3',
+														orgname:'岳阳中西医结合医院', is_exclusive:'0'},'searchDeptmentAction.action')">
+														岳阳中西医结合医院 
+													</a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='岳阳中西医结合医院名医特诊部(青海路)' href="####" onclick="formSubmit({
+														isSpTime:'0',
+														platformHosId:'43',
+														hosOrgCode:'42503274501',
+														paymode:'3',
+														orgname:'岳阳中西医结合医院名医特诊部(青海路)', is_exclusive:'0'},'searchDeptmentAction.action')">
+														岳阳中西医结合医院名医特诊部(青海路) 
+													</a>
+												</li>
+												 
+												
+										
+										
+									</ul>
+							</div>
+							
+									<!-- 显示中医医院-->
+									
+									
+										<div id="zkyy"
+											style="display: none;">
+									
+									<ul>
+									    
+									</ul>
+							</div>
+							
+		          		</div>
+		              	<!-- Table 内容结束 -->
+		        </div>
+		        
+		        </br>
+	        	<div class="yuyue_fl">
+			        <div class="yuyue_fl_top">
+			              	<li class="fl_yiyuan">
+			            		<a id="fl_yiyuan" class="active" onclick="yuyue_f1_a_onclick(this)">专科医院</a>
+			          		</li>
+			        </div>
+		        	<div class="yuyue_fl_yy" id="hospitalInfo">
+		              	<!-- Table 导航开始 -->
+		              	<div id="fl_yiyuan_nr" class="clearfix">
+		            		
+									<!-- 显示专科医院-->
+									
+									
+										<div id="zhyy" style="display: none;">
+									
+									<ul>
+										
+									</ul>
+							</div>
+							
+									<!-- 显示专科医院-->
+									
+									
+										<div id="zyyy" style="display: none;">
+									
+									<ul>
+										
+									</ul>
+							</div>
+							
+									<!-- 显示专科医院-->
+									
+										<div id="zkyy">
+									
+									
+									<ul>
+										
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='东方肝胆外科医院(杨浦院区)' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'1',hosOrgCode:
+														'42520068100',paymode:
+														'3',orgname:
+														'东方肝胆外科医院(杨浦院区)', is_exclusive:'1'},'searchDeptmentAction.action')">
+														东方肝胆外科医院(杨浦院区) </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='上海市第一妇婴保健院（西院）' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'2',hosOrgCode:
+														'42501028X00',paymode:
+														'3',orgname:
+														'上海市第一妇婴保健院（西院）', is_exclusive:'0'},'searchDeptmentAction.action')">
+														上海市第一妇婴保健院（西院） </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='上海市第一妇婴保健院（东院）' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'52',hosOrgCode:
+														'42501028X03',paymode:
+														'3',orgname:
+														'上海市第一妇婴保健院（东院）', is_exclusive:'0'},'searchDeptmentAction.action')">
+														上海市第一妇婴保健院（东院） </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='儿科医院' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'3',hosOrgCode:
+														'42500651200',paymode:
+														'3',orgname:
+														'儿科医院', is_exclusive:'0'},'searchDeptmentAction.action')">
+														儿科医院 </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='儿童医学中心' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'4',hosOrgCode:
+														'42507230900',paymode:
+														'3',orgname:
+														'儿童医学中心', is_exclusive:'0'},'searchDeptmentAction.action')">
+														儿童医学中心 </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='儿童医院(北京西路院区)' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'5',hosOrgCode:
+														'42500244X00',paymode:
+														'3',orgname:
+														'儿童医院(北京西路院区)', is_exclusive:'0'},'searchDeptmentAction.action')">
+														儿童医院(北京西路院区) </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='儿童医院(泸定路院区)' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'9',hosOrgCode:
+														'42500244X01',paymode:
+														'3',orgname:
+														'儿童医院(泸定路院区)', is_exclusive:'0'},'searchDeptmentAction.action')">
+														儿童医院(泸定路院区) </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='妇产科医院黄浦院区' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'12',hosOrgCode:
+														'42500763800',paymode:
+														'3',orgname:
+														'妇产科医院黄浦院区', is_exclusive:'0'},'searchDeptmentAction.action')">
+														妇产科医院黄浦院区 </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='妇产科医院杨浦院区' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'22',hosOrgCode:
+														'42500763801',paymode:
+														'3',orgname:
+														'妇产科医院杨浦院区', is_exclusive:'0'},'searchDeptmentAction.action')">
+														妇产科医院杨浦院区 </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='肺科医院' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'25',hosOrgCode:
+														'42500373300',paymode:
+														'3',orgname:
+														'肺科医院', is_exclusive:'0'},'searchDeptmentAction.action')">
+														肺科医院 </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='肺科医院延庆路门诊部(徐汇区)' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'26',hosOrgCode:
+														'42500373301',paymode:
+														'3',orgname:
+														'肺科医院延庆路门诊部(徐汇区)', is_exclusive:'0'},'searchDeptmentAction.action')">
+														肺科医院延庆路门诊部(徐汇区) </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='公共卫生临床中心（金山总部）' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'27',hosOrgCode:
+														'Y0041800100',paymode:
+														'3',orgname:
+														'公共卫生临床中心（金山总部）', is_exclusive:'1'},'searchDeptmentAction.action')">
+														公共卫生临床中心（金山总部） </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='公共卫生临床中心（市区分部）' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'28',hosOrgCode:
+														'42500982800',paymode:
+														'3',orgname:
+														'公共卫生临床中心（市区分部）', is_exclusive:'1'},'searchDeptmentAction.action')">
+														公共卫生临床中心（市区分部） </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='眼耳鼻喉科医院' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'29',hosOrgCode:
+														'42500762X00',paymode:
+														'3',orgname:
+														'眼耳鼻喉科医院', is_exclusive:'0'},'searchDeptmentAction.action')">
+														眼耳鼻喉科医院 </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='眼病防治中心' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'30',hosOrgCode:
+														'42500274900',paymode:
+														'3',orgname:
+														'眼病防治中心', is_exclusive:'1'},'searchDeptmentAction.action')">
+														眼病防治中心 </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='口腔病防治院(总院)' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'31',hosOrgCode:
+														'42500049500',paymode:
+														'3',orgname:
+														'口腔病防治院(总院)', is_exclusive:'1'},'searchDeptmentAction.action')">
+														口腔病防治院(总院) </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='口腔病防治院(分院)' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'32',hosOrgCode:
+														'42500049501',paymode:
+														'3',orgname:
+														'口腔病防治院(分院)', is_exclusive:'1'},'searchDeptmentAction.action')">
+														口腔病防治院(分院) </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='胸科医院' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'33',hosOrgCode:
+														'42501287500',paymode:
+														'3',orgname:
+														'胸科医院', is_exclusive:'0'},'searchDeptmentAction.action')">
+														胸科医院 </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='皮肤病医院(保德路)' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'35',hosOrgCode:
+														'42500278100',paymode:
+														'3',orgname:
+														'皮肤病医院(保德路)', is_exclusive:'1'},'searchDeptmentAction.action')">
+														皮肤病医院(保德路) </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='皮肤病医院(武夷路)' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'37',hosOrgCode:
+														'42500278101',paymode:
+														'3',orgname:
+														'皮肤病医院(武夷路)', is_exclusive:'1'},'searchDeptmentAction.action')">
+														皮肤病医院(武夷路) </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='精神卫生中心' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'38',hosOrgCode:
+														'42509737000',paymode:
+														'3',orgname:
+														'精神卫生中心', is_exclusive:'1'},'searchDeptmentAction.action')">
+														精神卫生中心 </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='肿瘤医院' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'39',hosOrgCode:
+														'42500765400',paymode:
+														'3',orgname:
+														'肿瘤医院', is_exclusive:'0'},'searchDeptmentAction.action')">
+														肿瘤医院 </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='国际和平妇幼保健院' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'44',hosOrgCode:
+														'42500774200',paymode:
+														'3',orgname:
+														'国际和平妇幼保健院', is_exclusive:'0'},'searchDeptmentAction.action')">
+														国际和平妇幼保健院 </a>
+												</li>
+												 
+												
+										
+												<!-- 判断医院是否开放预约 --> 
+												
+												<li>
+													<a title='同济口腔医院' href="####" onclick="formSubmit({isSpTime:
+														'0',platformHosId:
+														'50',hosOrgCode:
+														'42500628000',paymode:
+														'3',orgname:
+														'同济口腔医院', is_exclusive:'1'},'searchDeptmentAction.action')">
+														同济口腔医院 </a>
+												</li>
+												 
+												
+										
+										
+									</ul>
+							</div>
+							
+		          		</div>
+	            <!-- Table 内容结束 -->
+	        	</div>
+        	</div>
+  		</div>
+    	</div>
+  		</div>
+    
+    	<div class="yuyue_kuai">
+    		<div class="yuyue_kuai_top">
+        		<em class="first">快速挂号</em>
+      		</div>
+      		<div>
+	        	<ul id="fastRegistrationDiv" class="yuyue_kuai_middle">
+		        	<li>
+		              	<label for="">医院：</label>
+		              	<select id="platformHosIdSel" onchange="hospital();">
+								<option>--请选择医院--</option>
+								
+									综合医院
+									<ul>
+										<option>- - - - -
+											综合医院- - - - -
+										</option>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="10,0,3">
+														长海医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="13,0,3">
+														长征医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="14,0,3">
+														华东医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="16,0,3">
+														华山医院北院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="17,0,3">
+														上海市瑞金医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="19,0,3">
+														上海市瑞金医院北院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="20,0,3">
+														仁济医院东院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="21,0,3">
+														仁济医院西院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="23,0,3">
+														仁济医院南院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="24,0,3">
+														第一人民医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="34,0,3">
+														第一人民医院南院(松江)
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="36,0,3">
+														第九人民医院(北部院区)
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="40,0,3">
+														第九人民医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="41,0,3">
+														第六人民医院东院(临港)
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="45,0,3">
+														第六人民医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="46,0,3">
+														第十人民医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="47,0,3">
+														同济医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="48,0,3">
+														新华医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="49,0,3">
+														中山医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+											</li>
+										
+									</ul>
+								
+									中医医院
+									<ul>
+										<option>- - - - -
+											中医医院- - - - -
+										</option>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="6,0,3">
+														龙华医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="7,0,3">
+														曙光医院东院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="8,0,3">
+														曙光医院西院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="11,0,3">
+														上海市中医医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="18,0,3">
+														上海市中医医院石门路门诊部
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="42,0,3">
+														岳阳中西医结合医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="43,0,3">
+														岳阳中西医结合医院名医特诊部(青海路)
+													</option>
+												
+											</li>
+										
+									</ul>
+								
+									专科医院
+									<ul>
+										<option>- - - - -
+											专科医院- - - - -
+										</option>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="1,0,3">
+														东方肝胆外科医院(杨浦院区)
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="2,0,3">
+														上海市第一妇婴保健院（西院）
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="52,0,3">
+														上海市第一妇婴保健院（东院）
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="3,0,3">
+														儿科医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="4,0,3">
+														儿童医学中心
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="5,0,3">
+														儿童医院(北京西路院区)
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="9,0,3">
+														儿童医院(泸定路院区)
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="12,0,3">
+														妇产科医院黄浦院区
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="22,0,3">
+														妇产科医院杨浦院区
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="25,0,3">
+														肺科医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="26,0,3">
+														肺科医院延庆路门诊部(徐汇区)
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="27,0,3">
+														公共卫生临床中心（金山总部）
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="28,0,3">
+														公共卫生临床中心（市区分部）
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="29,0,3">
+														眼耳鼻喉科医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="30,0,3">
+														眼病防治中心
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="31,0,3">
+														口腔病防治院(总院)
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="32,0,3">
+														口腔病防治院(分院)
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="33,0,3">
+														胸科医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="35,0,3">
+														皮肤病医院(保德路)
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="37,0,3">
+														皮肤病医院(武夷路)
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="38,0,3">
+														精神卫生中心
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="39,0,3">
+														肿瘤医院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="44,0,3">
+														国际和平妇幼保健院
+													</option>
+												
+											</li>
+										
+											<li>
+												<!-- 判断医院是否开放预约 -->
+											 	
+													<option
+														value="50,0,3">
+														同济口腔医院
+													</option>
+												
+											</li>
+										
+									</ul>
+								
+							</select>
+		            	</li>
+	        			<li>
+			              	<label>科室：</label>
+			              	<select id="platformDeptIdSel" onchange="doctManage();">
+									<option>--请选择科室--</option>
+							</select>
+	            		</li>
+	        			<li>
+			              	<label>医生：</label>
+			              	<select id="platformDoctIdSel" onchange="platformDoctIdManage();">
+									<option value="0">--请选择医生--</option>
+							</select>
+	            		</li>
+	      		</ul>
+      		</div>
+	      	<div class="yuyue_anniu">
+				<a onclick="queryOrder();">马上预约  </a>
+			</div>
+   		</div>
+    
+	  	<div class="wenti mt20">
+          	<div class="yuyue_kuai_top">
+        		<span class="bline2">新闻发布</span>
+        		<span class="more">
+            		<a href="getArticleList_news.action" title="点击查看更多">...</a>
+            	</span>
+      		</div>
+			<div id="loadNewsId" class="bd">
+				<img src="images/ajax-loader.gif" alt="请稍后,马上就好." />
+			</div>
+	  	</div>
+    
+   		<div class="ad">
+	      		<img src="images/ad.jpg" />
+	  	</div>
+	  </div>
+  	</div>
+  	<div class="main clearfix">
+    	<div style=" float: left;margin-right: 20px;width: 720px;">
+    		<div class="remys" style="margin-right: 20px;height:300px;">
+          		<div class="remys_top">
+					<span class="bline2">热门医生 </span>
+					<span class="more">
+						<a href="querty.action?pattern=1" title="点击查看更多">...</a>
+					</span>
+		  		</div>
+		  		
+		  		<!-- <div id="doctorHot" class="remys_nr">
+					<img src="images/ajax-loader.gif" alt="请稍后,马上就好." />
+				</div> -->
+				<div class="remys_nr">
+						<div class="rank_ph1">
+						
+							
+									<span>
+										<a href="#">
+											<img name="image" src="http://yuyue.shdc.org.cn:9080/uploadImage/docImgSmall/42500651200_0262.jpg"
+												method="post" onerror="this.src='images/doctor.jpg'"> 
+											</img>
+										</a> 
+									</span>
+									<a href="####" onclick="
+										formSubmit({isSpTime:'',
+										docInfo:{deptName:'皮肤科',
+										doctName:'王榴慧',
+										platformDeptId:'91',
+										visitLevel:'',
+										paymode:'3',
+										orgcode:'3',
+										orgname:'儿科医院',
+										platformDoctId:'2508'}}
+										,'forwardDocInfo.action')	
+										" title="预约数量:518">
+										<p><i>姓名：</i>
+										   <font class="green">王榴慧 </font>
+										</p>
+										<p><I>科室：</I>皮肤科</p>
+										<p title="儿科医院"><i>医院：</i>                   
+								          
+								      儿科医院   
+								   </p>
+										<p><i>预约数量：</i>518</p>
+									</a>
+							
+						
+					</div>
+					<div class="rank_ph2">
+						<ul>
+							
+								
+									
+								
+									
+										<li>
+											
+											<span class="rank_paihang_2" title="周莲宝 皮肤科 儿科医院">
+												<a href="####" onclick="
+													formSubmit({isSpTime:'',
+													docInfo:{deptName:'皮肤科',
+													doctName:'周莲宝',
+													platformDeptId:'91',
+													visitLevel:'',
+													orgname:'儿科医院',
+													orgcode:'3',
+													platformDoctId:'3165'}}
+													,'forwardDocInfo.action')	
+													">
+													
+														
+														
+															周莲宝 皮肤科 儿科医院
+														
+													 
+												</a>  
+											</span>
+											<span class="rank_paihang_right" title="预约数量">
+												511
+											</span>
+										</li>
+									
+								
+									
+										<li>
+											
+											<span class="rank_paihang_3" title="芦军萍 消化科 儿科医院">
+												<a href="####" onclick="
+													formSubmit({isSpTime:'',
+													docInfo:{deptName:'消化科',
+													doctName:'芦军萍',
+													platformDeptId:'90',
+													visitLevel:'',
+													orgname:'儿科医院',
+													orgcode:'3',
+													platformDoctId:'3354'}}
+													,'forwardDocInfo.action')	
+													">
+													
+														
+														
+															芦军萍 消化科 儿科医院
+														
+													 
+												</a>  
+											</span>
+											<span class="rank_paihang_right" title="预约数量">
+												369
+											</span>
+										</li>
+									
+								
+									
+										<li>
+											
+											<span class="rank_paihang_4" title="周秀红 呼吸科 儿科医院">
+												<a href="####" onclick="
+													formSubmit({isSpTime:'',
+													docInfo:{deptName:'呼吸科',
+													doctName:'周秀红',
+													platformDeptId:'79',
+													visitLevel:'',
+													orgname:'儿科医院',
+													orgcode:'3',
+													platformDoctId:'2956'}}
+													,'forwardDocInfo.action')	
+													">
+													
+														
+														
+															周秀红 呼吸科 儿科医院
+														
+													 
+												</a>  
+											</span>
+											<span class="rank_paihang_right" title="预约数量">
+												353
+											</span>
+										</li>
+									
+								
+							
+						</ul>
+					</div>
+				</div>
+      		</div>
+          	<div class="remys" style="height:300px;">
+	        	<div class="remys_top">
+	              	<span class="bline2">医院预约排行 </span>
+	              	<span class="more">
+	          			<a href="querty.action?pattern=1" title="点击查看更多">... </a>
+	          	  	</span>
+	        	</div>
+	     		<!-- <div id="loadHospitalHotId" class="remys_nr">
+					<img src="images/ajax-loader.gif" alt="请稍后,马上就好." />
+				</div> -->
+				<div class="remys_nr">
+					<div class="rank_ph1">
+					
+						
+					<span>
+						<img name="image"
+							src="http://yuyue.shdc.org.cn:9080/uploadImage/docImgSmall/42502656400.jpg"
+							method="post" onerror="this.src='images/hospital200.jpg'" > </img>
+					</span>
+							<a href="####" class="paihang_a" onclick=" 
+								formSubmit(
+								{isSpTime:'0',
+								hosorgcode:'17',
+								paymode:'3',
+								orgname:'上海市瑞金医院'},'searchDeptmentAction.action')
+								" title="预约数量:18886"><p>
+								<font class="green">上海市瑞金医院</font></p>
+								<P><i>医院等级：</i>三级甲等</P>
+								<p><i>联系电话：</i>021-64370045</p>
+								<p>
+									<i>预约数量:  </i>18886
+								</p>
+						    </a>
+							
+						
+					
+				</div>
+				<div class="rank_ph2">
+					<ul>
+						
+							
+								
+							
+								
+									<li>
+										
+										<span class="rank_paihang_2" title="龙华医院">
+											<a href="####" onclick="
+												formSubmit(
+												{isSpTime:'0',
+												hosorgcode:'6',
+												paymode:'3',
+												orgname:'龙华医院'},'searchDeptmentAction.action');
+												">龙华医院 
+											</a> 
+											
+										</span>
+										<span class="rank_paihang_right" title="预约数量">
+											17359 
+										</span>
+									</li>
+								
+							
+								
+									<li>
+										
+										<span class="rank_paihang_3" title="儿科医院">
+											<a href="####" onclick="
+												formSubmit(
+												{isSpTime:'0',
+												hosorgcode:'3',
+												paymode:'3',
+												orgname:'儿科医院'},'searchDeptmentAction.action');
+												">儿科医院 
+											</a> 
+											
+										</span>
+										<span class="rank_paihang_right" title="预约数量">
+											15449 
+										</span>
+									</li>
+								
+							
+								
+									<li>
+										
+										<span class="rank_paihang_4" title="新华医院">
+											<a href="####" onclick="
+												formSubmit(
+												{isSpTime:'0',
+												hosorgcode:'48',
+												paymode:'3',
+												orgname:'新华医院'},'searchDeptmentAction.action');
+												">新华医院 
+											</a> 
+											
+										</span>
+										<span class="rank_paihang_right" title="预约数量">
+											13230 
+										</span>
+									</li>
+								
+							
+						
+					</ul>
+				</div>
+				</div>
+      		</div>
+    	</div>
+    	<div class="wenti">
+		      <div class="yuyue_kuai_top">
+		        	<span class="bline2">最新挂号</span>
+		      </div>
+			  <div id="loadRegisterId" class="wenti_nr" style="height: 233px">
+					<img src="images/ajax-loader.gif" alt="请稍后,马上就好." />
+			  </div>	 
+  		</div>
+		<div id="submitDiv"></div>
+	</div>
+	<!-- <div id='cs_box'>
+		  <span class='cs_title'>APP下载</span>
+		  <span class='cs_close'>x</span>
+		  <div class='cs_img'></div>
+		  <div class='cs_info'>扫一扫下载APP<br>随时随地抢约专家</div>
+	</div> -->
+	
+
+
+
+<div id="bottom">
+     <div class="bottom">
+    	<div class="bottom_left">
+    		<div style="text-align:center;padding-top:0px;">
+	          <p>上海申康医院发展中心@2015版权所有&nbsp;[沪ICP备08008262] 版权说明  保护隐私权</p>
+	          <p>主办单位：上海申康医院发展中心&nbsp;&nbsp;技术支持单位：万达信息股份有限公司</p>
+	          <!-- <P>申康医联服务热线：021-54644601</P> -->
+        	</div>
+        </div>
+    	<div class="bottom_right">
+	        <div class="title">
+	        	<img src="images/freecall.png">&nbsp;服务热线：<span style="margin-right: 6px;"><font>(021)</font> <font>96886</font></span>
+	        	<span><font>400</font><font>8203137</font></span>
+	      	</div>
+	        <!-- <div class="content">
+	        	周一到周五 09:00-18:00（欢迎致电咨询）
+	      	</div> -->
+        </div>
+  	  </div>
+</div>
+	<script>
+		myEvent(window,'load',function(){
+			cs_box.set({
+				img_path : 'images/app.png',	//设置图片路径
+					//设置QQ号码
+			});
+		});
+	</script>
+	<script language="javascript" type="text/javascript">
+	
+		/** 漂浮公告 **/
+		$(function() {
+			var thisBox = $('.FloatImg');
+			var defaultTop = thisBox.offset().top;
+			var slide_box = $('.FloatImg .slide_box');
+			var slide_min = $('.FloatImg .slide_min');
+
+			var closed = $('.FloatImg .slide_box .close ');
+			slide_min.on('click', function() {
+				$(this).hide();
+				slide_box.show();
+			});
+			closed.on('click', function() {
+				slide_box.hide().hide();
+				slide_min.show();
+			});
+			// 页面滚动的同时，悬浮框也跟着滚动
+			$(window).on('scroll', function() {
+				scro();
+			});
+			$(window).onload = scro();
+			function scro() {
+				var offsetTop = defaultTop + $(window).scrollTop();
+				offsetTop = $("body").outerHeight() < offsetTop
+						+ $(".slide_box").height() ? ($("body").outerHeight() - $(
+						".slide_box").height())
+						: offsetTop;
+				thisBox.animate({
+					top : offsetTop
+				}, {
+					duration : 300, //滑动速度
+					queue : false
+				//此动画将不进入动画队列	
+
+				});
+			}
+		}); 
+
+		var httpRequest;
+
+		function createHttpRequest() {
+			if (window.XMLHttpRequest) {
+				httpRequest = new XMLHttpRequest();
+			} else {
+				if (window.ActiveXObject) {
+					// IE
+					httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+			}
+		}
+
+		function platformDoctIdManage() {
+			var sel = document.getElementsByName("platformDoctIdSel")[0];
+			var doctId = sel.options[sel.options.selectedIndex].value;
+		}
+
+		function queryOrder() {
+
+			var platformHosId = $("#platformHosIdSel option:selected").val().split(",")[0];
+			var platformDeptId = $("#platformDeptIdSel option:selected").val();
+			var platformDoctorId = $("#platformDoctIdSel option:selected").val();
+			var paymode = $("#platformHosIdSel option:selected").val().split(
+					",")[2];
+			var isSpTime = $("#platformHosIdSel option:selected").val().split(
+					",")[1];
+			var orgname = $("#platformHosIdSel option:selected").text();
+			var reg = /^\d+$/;
+			if (platformDoctorId == null) {
+				platformDoctorId = "";
+			}
+			if (platformHosId == null || platformHosId == ""
+					|| (platformHosId.indexOf("请选择") != -1)
+					|| !reg.test(platformHosId)) {
+				alert('请选择医院');
+			} else if (platformDeptId == null || platformDeptId == ""
+					|| (platformDeptId.indexOf("请选择") != -1)
+					|| (platformDeptId == '-1')) {
+				alert('请选择科室');
+			} else if (platformDoctorId == '0' || platformDoctorId =='null'){
+				formSubmit({
+					platformHosId : platformHosId,
+					platformDeptId : platformDeptId,
+					platformDoctorId : platformDoctorId == "null" ? ""
+							: platformDoctorId,
+					orgname : orgname,
+					tempDeptName : $("#platformDeptIdSel option:selected")
+							.text(),
+					paymode : paymode,
+					isSpTime : isSpTime
+				}, "searchOrderNumInfoAction.action");
+			} else{
+				formSubmit({
+					isSpTime : isSpTime,
+					docInfo:{deptName:$("#platformDeptIdSel option:selected").text(),
+						 doctName:$("#platformDoctIdSel option:selected").text(),
+						 platformDeptId:platformDeptId,
+						 visitLevel:"",
+						 orgcode:platformHosId,
+						 platformDoctId:platformDoctorId}
+				}, "forwardDocInfo.action");
+			}
+		}
+
+		//ajxa查询科室
+		function hospital() {
+
+			/* var sel = document.getElementsByName("platformHosIdSel")[0];
+			var selvalue = sel.options[sel.options.selectedIndex].value; */
+			//platformHosIdSel
+			var selvalue = $("#platformHosIdSel option:selected").val();
+			var hosId = selvalue.split(",")[0];
+			//如果为湘雅附二则屏蔽医生选项
+			if (hosId == "444885559" || hosId == "444885014") {
+				$("#platformDoctIdSel").attr("disabled", "true");
+			} else {
+				$("#platformDoctIdSel").removeAttr("disabled");
+			}
+			/* var orgname = sel.options[sel.options.selectedIndex].text; */
+			var orgname = $("#platformHosIdSel option:selected").text();
+			//清空科室选项
+			var platformDeptIdSel = document.getElementById("platformDeptIdSel");
+			$("#platformDeptIdSel").empty();
+			platformDeptIdSel.options.add(new Option("--请选择科室--", ""));
+
+			//清空医院选项
+			var platformDoctIdSel = document.getElementById("platformDoctIdSel");
+			platformDoctIdSel.options.length = 0;
+			platformDoctIdSel.options.add(new Option("--请选择医生--", ""));
+			$("#orgname").val(orgname);
+			$("#hosIdInfo").val(hosId);
+			$("#platformHosId").val(hosId);
+			//查询医院及处理响应
+			$.ajax({
+				url : "findDeptment.action",
+				data : "hosorgcode=" + hosId,
+				dataType : "text",
+				type : "POST",
+				success : function(msg) {
+					transHospitalInfoData(msg);
+				}
+			});
+		}
+
+		/**
+		 * ajax方式取得医生信息后，把医生信息添加到医生选择下拉框
+		 * 
+		 * @returns
+		 */
+		function transHospitalInfoData(result) {
+			var releaseObjectSelect = document.getElementById("platformDeptIdSel");
+			releaseObjectSelect.options.length = 0;
+			releaseObjectSelect.options.add(new Option("--请选择科室--", null));
+			if (null != result && result.length > 0) {
+				releaseObjectSelect.options.length = 0;
+				var doctorInfosArray = result.split(";");
+				for (var i = 0; i < doctorInfosArray.length; i++) {
+					var doctorInfoArray = doctorInfosArray[i].split(":");
+					releaseObjectSelect.options.add(new Option(
+							doctorInfoArray[1], doctorInfoArray[0]));
+				}
+			}
+			return result;
+		}
+
+		function doctManage() {
+			var sel = document.getElementById("platformDeptIdSel");
+			
+			var DeptId = sel.options[sel.options.selectedIndex].value;
+			
+			//var platformHosId = document.getElementById("hosIdInfo").value;
+			var platformHosId = $("#platformHosIdSel option:selected").val()
+					.split(",")[0];
+			$("#platformDoctIdSel").empty();
+			$("#platformDoctIdSel")[0].options
+					.add(new Option("--请选择医生--", null));
+			if (httpRequest == null) {
+				createHttpRequest();
+			}
+
+			httpRequest.onreadystatechange = transDoctInfoData;
+			httpRequest.open("POST", 'findDoctInfo.action?platformHosId='
+					+ platformHosId + "&hosDeptCode=" + DeptId, true);
+			httpRequest.send(null);
+			//查询医院及处理响应
+		}
+
+		/**
+		 * ajax方式取得医生信息后，把医生信息添加到医生选择下拉框
+		 * 
+		 * @returns
+		 */
+		function transDoctInfoData() {
+			if (httpRequest.readyState == 4) {
+
+				if (!isNaN(httpRequest.status) && httpRequest.status == 200) {
+					// show data here
+					var result = httpRequest.responseText;
+					result = result.substring(0, result.length - 1);
+					var releaseObjectSelect = document
+							.getElementById("platformDoctIdSel");
+					if (null != result && result.length > 0) {
+						releaseObjectSelect.options.length = 0;
+						releaseObjectSelect.options.add(new Option("--请选择医生--",
+								null));
+
+						var doctorInfosArray = result.split(";");
+						for (var i = 0; i < doctorInfosArray.length; i++) {
+							var doctorInfoArray = doctorInfosArray[i]
+									.split(":");
+							/* if(i == 0)
+							 {
+							     //设置医生初始值
+								// document.getElementById("platformDoctorId").value = doctorInfoArray[0];
+							 }*/
+							releaseObjectSelect.options.add(new Option(
+									doctorInfoArray[1], doctorInfoArray[0]));
+						}
+					}
+				} else {
+					//alert('与服务器的连接发生异常！');
+				}
+			}
+			return result;
+		}
+
+		//自动刷新一次页面的js
+		var Cookie = {
+			setCookie : function(name, value, option) {
+				var str = name + "=" + escape(value);
+				if (option) {
+					if (option.expireDays) {
+						var date = new Date();
+						var ms = option.expireDays * 24 * 3600 * 1000;
+						date.setTime(date.getTime() + ms);
+						str += "; expires=" + date.toGMTString();
+					}
+					if (option.path)
+						str += ";path=" + option.path;
+					if (option.domain)
+						str += ";domain=" + option.domain;
+					if (option.secure)
+						str += ";true";
+				}
+				document.cookie = str;
+			},
+			getCookie : function(name) {
+				var cookies = document.cookie.split(";");
+				for (var i = 0; i < cookies.length; i++) {
+					var arr = cookies[i].split("=");
+					if (arr[0] == name) {
+						return unescape(arr[1]);
+					}
+				}
+				return "";
+			},
+			delCookie : function(name) {
+				this.setCookie(name, "", {
+					expireDays : -1
+				});
+			}
+		}
+	</script>
+	<div class="FloatImg" style=" width:198px;">
+		
+		<div class="slide_box" style="display: block; width:180px;">
+			<div class="close" title="点击关闭">x</div>
+			<!-- <div class="item">
+				<p>
+					<img src="images/ewm_app.jpg" title="扫一扫，预约挂号，就诊方便！" />
+				</p>
+			</div>
+			<div class="item">
+				<p>
+					<img src="images/ewm_wx.jpg" title="扫一扫，预约挂号，就诊方便！" />
+				</p>
+			</div> -->
+			<div class="item" style=" width:180px;color:red;">
+				<p>
+		尊敬的用户：<br>
+    &nbsp;&nbsp;申康医联预约挂号平台电话系统将于2017年6月16日17:00起进行服务升级，升级后原客服电话95169将变更为<font>(021)</font> <font>96886</font>。原95169客服电话将不再受理相关业务，请广大用户互相转告。<br>
+		　&nbsp;&nbsp;上海申康医院发展中心<br>
+		 　&nbsp;&nbsp;2017年6月16日</p>
+			</div>
+		</div>
+	</div>
+	<script language="javascript" type="text/javascript">
+		window.onload = function() {
+			/* loadHospitalHot(); */
+			/* loadDoctorHot(); */
+			loadRegister();
+			loadNews();
+			if ("1" == Cookie.getCookie("diffmaker")) {
+				Cookie.delCookie("diffmaker");
+			} else {
+				Cookie.setCookie("diffmaker", "1", null);
+				if (document.getElementById("platformHosIdSel")) {
+					document.getElementById("platformHosIdSel").options[0].selected = true;
+				}
+			}
+		}
+	</script>
+</body>
+</html>
